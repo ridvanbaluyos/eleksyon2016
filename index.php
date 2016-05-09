@@ -37,6 +37,7 @@
 		var marcos = data.result[0].candidates[2];
 		var trillanes = data.result[0].candidates[3];
 		var robredo = data.result[0].candidates[4];
+		var honasan = data.result[0].candidates[5];
 	
 		var data = google.visualization.arrayToDataTable([
 	        ['Candidate', 'Votes', { role: 'style' }, { role: 'annotation' } ],
@@ -45,6 +46,7 @@
 	        [marcos.name, parseInt(marcos.vote_count), 'red', marcos.vote_count],
 			[robredo.name, parseInt(robredo.vote_count), 'yellow', robredo.vote_count],
 			[trillanes.name, parseInt(trillanes.vote_count), 'dark green', trillanes.vote_count],
+			[honasan.name, parseInt(honasan.vote_count), 'dark green', honasan.vote_count],
 	      ]);
 		var options = {
 			title: "PH Vote: Vice-Presidentiables",
