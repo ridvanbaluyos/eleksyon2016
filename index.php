@@ -64,7 +64,7 @@
 
 		$('#as_of').html(as_of);
 		$('#voters_remaining').html(votersRemaining);
-		$('#gap').html(parseInt(marcos.vote_count) - parseInt(robredo.vote_count));
+		$('#gap').html(parseInt(robredo.vote_count) - parseInt(marcos.vote_count));
 		
       	// Instantiate and draw our chart, passing in some options.
       	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
@@ -74,7 +74,7 @@
   </head>
 
   <body>
-	<h4>Gap difference between BBM and Leni: <span id="gap"></span></h4>
+	<h4>Leni is leading by: <span id="gap"></span></h4>
 	<h4>Voters Remaining: <span id="voters_remaining"></span></h4>
 	<small>(data as of: <span id="as_of"></span>)</small>
     <div id="chart_div"></div>
