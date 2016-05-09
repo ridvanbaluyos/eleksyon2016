@@ -74,12 +74,12 @@
   </head>
 
   <body>
-	<h4>Leni is leading by: <span id="gap"></span></h4>
+	<h4>Leni is leading by	: <span id="gap"></span></h4>
 	<h4>Voters Remaining: <span id="voters_remaining"></span></h4>
 	<small>(data as of: <span id="as_of"></span>)</small>
     <div id="chart_div"></div>
 	<br />
-	<img src="run.gif" />
+	<img src="cattail.gif" />
 	<p>
 		<a href="http://www.gmanetwork.com/news/eleksyon2016/results" target="_blank" title="GMA News TV">GMA News Online</a> | <a href="https://developers.google.com/chart/" target="_blank" title="Google Chart">Google Chart</a>
 	</p>
