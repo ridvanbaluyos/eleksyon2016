@@ -6,7 +6,7 @@
 	<title>PHVote: General Elections 2016</title>
 	<meta name="robots" content="index, follow">
 	<!-- Facebook and Open Graph Meta Tags -->
-	<meta property="og:title" content="@yield('title')"/>
+	<meta property="og:title" content="PHVote: General Elections 2016"/>
 	<meta property="og:description" content="PH Vote: General Elections 2016"/>
 	<meta property="og:image" content="http://i919.photobucket.com/albums/ad31/thebaboon/Animated%20Gifs/tumblr_liodktgTAF1qbhtrto1_500.gif"/>
 	<meta property="og:type" content="website"/>
