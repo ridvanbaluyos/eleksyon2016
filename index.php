@@ -30,7 +30,7 @@
 			dataType:"json",
 			async: false
 		}).responseText;
-		data = $.parseJSON(data)
+		data = $.parseJSON(data);
 
 		var cayetano = data.result[0].candidates[0];
 		var escudero = data.result[0].candidates[1];
@@ -38,6 +38,12 @@
 		var trillanes = data.result[0].candidates[3];
 		var robredo = data.result[0].candidates[4];
 		var honasan = data.result[0].candidates[5];
+		
+		var as_of = data.result_as_of;
+		
+		var voters = data.total_voters_processed.split('/');
+		var votersRemaining = parseInt(voters[1]) - parseInt(voters[0]);
+		console.log(voters);
 	
 		var data = google.visualization.arrayToDataTable([
 	        ['Candidate', 'Votes', { role: 'style' }, { role: 'annotation' } ],
@@ -55,7 +61,11 @@
 			bar: {groupWidth: "95%"},
 			legend: { position: "none" },
 		};
+
+		$('#as_of').html(as_of);
+		$('#voters_remaining').html(votersRemaining);
 		$('#gap').html(parseInt(marcos.vote_count) - parseInt(robredo.vote_count));
+		
       	// Instantiate and draw our chart, passing in some options.
       	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
       	chart.draw(data, options);
@@ -65,6 +75,8 @@
 
   <body>
 	<h4>Gap difference between BBM and Leni: <span id="gap"></span></h4>
+	<h4>Voters Remaining: <span id="voters_remaining"></span></h4>
+	<small>(data as of: <span id="as_of"></span>)</small>
     <div id="chart_div"></div>
 	<br />
 	<img src="run.gif" />
