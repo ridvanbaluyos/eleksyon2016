@@ -47,12 +47,12 @@
 	
 		var data = google.visualization.arrayToDataTable([
 	        ['Candidate', 'Votes', { role: 'style' }, { role: 'annotation' } ],
-	        [cayetano.name, parseInt(cayetano.vote_count), 'navy blue', cayetano.vote_count],
-	        [escudero.name, parseInt(escudero.vote_count), 'gray', escudero.vote_count],
-	        [marcos.name, parseInt(marcos.vote_count), 'red', marcos.vote_count],
-			[robredo.name, parseInt(robredo.vote_count), 'yellow', robredo.vote_count],
-			[trillanes.name, parseInt(trillanes.vote_count), 'dark green', trillanes.vote_count],
-			[honasan.name, parseInt(honasan.vote_count), 'dark green', honasan.vote_count],
+	        [cayetano.name, parseInt(cayetano.vote_count), 'navy blue', Number(cayetano.vote_count).toLocaleString('en')],
+	        [escudero.name, parseInt(escudero.vote_count), 'gray', Number(escudero.vote_count).toLocaleString('en')],
+	        [marcos.name, parseInt(marcos.vote_count), 'red', Number(marcos.vote_count).toLocaleString('en')],
+			[robredo.name, parseInt(robredo.vote_count), 'yellow', Number(robredo.vote_count).toLocaleString('en')],
+			[trillanes.name, parseInt(trillanes.vote_count), 'dark green', Number(trillanes.vote_count).toLocaleString('en')],
+			[honasan.name, parseInt(honasan.vote_count), 'dark green', Number(honasan.vote_count).toLocaleString('en')],
 	      ]);
 		var options = {
 			title: "PH Vote: Vice-Presidentiables",
@@ -63,8 +63,8 @@
 		};
 
 		$('#as_of').html(as_of);
-		$('#voters_remaining').html(votersRemaining);
-		$('#gap').html(parseInt(robredo.vote_count) - parseInt(marcos.vote_count));
+		$('#voters_remaining').html(Number(votersRemaining).toLocaleString('en'));
+		$('#gap').html(Number(parseInt(robredo.vote_count) - parseInt(marcos.vote_count)).toLocaleString('en'));
 		
       	// Instantiate and draw our chart, passing in some options.
       	var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
@@ -75,7 +75,9 @@
 
   <body>
 	<h4>Leni is leading by	: <span id="gap"></span></h4>
+	<!--
 	<h4>Voters Remaining: <span id="voters_remaining"></span></h4>
+	-->
 	<small>(data as of: <span id="as_of"></span>)</small>
     <div id="chart_div"></div>
 	<br />
